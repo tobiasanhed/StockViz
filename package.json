@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/tobiasanhed/portfolioapp.git"
   },
-  "author": "Tobias & Philip",
-  "license": "UNLICENSED",
+  "author": "Tobias Ånhed,  Philip Arvidsson <contact@philiparvidsson.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tobiasanhed/portfolioapp/issues"
   },
