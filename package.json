@@ -1,0 +1,22 @@
+{
+  "name": "portfolioapp",
+  "version": "0.1.0",
+  "description": "Keep up with your portfolio!",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobiasanhed/portfolioapp.git"
+  },
+  "author": "Tobias & Philip",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tobiasanhed/portfolioapp/issues"
+  },
+  "homepage": "https://github.com/tobiasanhed/portfolioapp#readme",
+  "dependencies": {
+    "electron": "^1.4.14"
+  }
+}
