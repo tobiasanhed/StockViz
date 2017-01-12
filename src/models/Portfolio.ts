@@ -13,7 +13,16 @@ export class Portfolio {
      * FIELDS
      *------------------------------------*/
 
-   private static investments = []
+   private static investments = [
+            {
+                currency: 'USD',
+                amount: 0.7,
+                initialPrice: 600.0,
+                investmentName: 'Bitcoin',
+                providerName: 'Winkdex',
+                imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+            }
+        ]
 
     /*--------------------------------------
      * METHODS
@@ -22,16 +31,4 @@ export class Portfolio {
     static getInvestments() {
         return Portfolio.investments
     }
-
-    static loadInvestments() {
-        Portfolio.investments = [
-            {
-                amount: 100.0,
-                initialPrice: 600.0,
-                investmentName: 'Bitcoin',
-                providerName: 'Winkdex',
-                imageUrl: ''
-            }
-        ]
-   }
 }
