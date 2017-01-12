@@ -23,10 +23,6 @@ export class App extends React.Component<any, any> {
      * METHODS
      *------------------------------------*/
 
-    componentDidMount() {
-        Portfolio.loadInvestments()
-    }
-
     render() {
         return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                    {this.props.children}

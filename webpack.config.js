@@ -1,4 +1,5 @@
-var webpack = require('webpack')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var webpack           = require('webpack')
 
 module.exports = {
     devServer: {
@@ -24,6 +25,9 @@ module.exports = {
     },
 
     plugins: [
+        new CopyWebpackPlugin([
+            { from: './node_modules/jquery/dist/jquery.min.js' }
+        ]),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.IgnorePlugin(/vertx/)
     ],
