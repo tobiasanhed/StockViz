@@ -5,15 +5,18 @@ const url = require('url')
 let win
 
 function createWindow() {
-    win = new BrowserWindow({ width: 640, height: 480 })
+    win = new BrowserWindow({
+        width: 640,
+        height: 480,
 
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
+        webPreferences: {
+            webSecurity: false
+        }
+    })
 
-    win.webContents.openDevTools()
+    win.loadURL('http://localhost:8080/')
+
+    //win.webContents.openDevTools()
 
     win.on('closed', () => {
         win = null
