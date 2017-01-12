@@ -12,6 +12,8 @@ import getMuiTheme      from 'material-ui/styles/getMuiTheme'
 import lightBaseTheme   from 'material-ui/styles/baseThemes/lightBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
+import { Portfolio } from '../models/Portfolio'
+
 /*--------------------------------------
  * CLASSES
  *------------------------------------*/
@@ -20,6 +22,10 @@ export class App extends React.Component<any, any> {
     /*--------------------------------------
      * METHODS
      *------------------------------------*/
+
+    componentDidMount() {
+        Portfolio.loadInvestments()
+    }
 
     render() {
         return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>

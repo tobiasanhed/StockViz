@@ -20,5 +20,5 @@ export class Investment {
     investmentName: string
     providerName: string
 
-    imageURL: string
+    imageUrl: string
 }
