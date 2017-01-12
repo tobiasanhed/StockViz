@@ -15,6 +15,7 @@ function createWindow() {
     })
 
     win.loadURL('http://localhost:8080/')
+    win.setMenu(null)
 
     //win.webContents.openDevTools()
 
