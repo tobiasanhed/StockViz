@@ -26,7 +26,7 @@ export class Home extends React.Component<any, any> {
         return <div style={{ width : '100%' }}>
         				{Portfolio.getInvestments().map((investment) => (
         							<InvestmentCard key={ investment.investmentName }
-        											title={ investment.investmentName } 
+        											title={ investment.investmentName }
         											providerName={ investment.providerName }
         											avatar={ investment.imageUrl }
         											amount={ investment.amount }
