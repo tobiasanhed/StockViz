@@ -20,7 +20,7 @@ export class Portfolio {
      *------------------------------------*/
 
     static getInvestments() {
-
+        return Portfolio.investments
     }
 
     static loadInvestments() {
