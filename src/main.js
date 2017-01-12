@@ -15,8 +15,8 @@ function createWindow() {
     })
 
     win.loadURL('http://localhost:8080/')
-    win.setMenu(null)
 
+    win.setMenu(null)
     //win.webContents.openDevTools()
 
     win.on('closed', () => {
@@ -25,7 +25,7 @@ function createWindow() {
 }
 
 app.on('activate', () => {
-    if (win === null) {
+    if (win == null) {
         createWindow()
     }
 })
@@ -33,7 +33,7 @@ app.on('activate', () => {
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
+    if (process.platform != 'darwin') {
         app.quit()
     }
 })
