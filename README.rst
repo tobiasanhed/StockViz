@@ -15,3 +15,9 @@ Checkpoints
 Ideas
 -----
 - Sync portfolio between computer/phone (maybe cloud storage for portfolios?)
+
+Built with
+==========
+- *Electron*
+- *NodeJS*
+- *React*
