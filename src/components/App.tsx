@@ -9,7 +9,7 @@ import * as injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 import getMuiTheme      from 'material-ui/styles/getMuiTheme'
-import lightBaseTheme   from 'material-ui/styles/baseThemes/lightBaseTheme'
+import darkBaseTheme   from 'material-ui/styles/baseThemes/darkBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import { Portfolio } from '../models/Portfolio'
@@ -24,7 +24,7 @@ export class App extends React.Component<any, any> {
      *------------------------------------*/
 
     render() {
-        return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        return <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                    {this.props.children}
                </MuiThemeProvider>
     }

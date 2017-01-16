@@ -37,7 +37,7 @@ export class InvestmentCard extends React.Component<any, any> {
 		var color = (r < 0.0) ? '#d00' : '#0d0'
 		var value = this.props.amount * this.state.currentPrice
 
-		return <Card style={{ width : 280, height : 160, margin : 20}}>
+		return <Card style={{ float : 'left', width : 280, height : 160, margin : 20}}>
 					<CardHeader
 						avatar={ this.props.avatar }
 						title={ this.props.title }
