@@ -15,6 +15,6 @@ export abstract class AbstractProvider {
      * METHODS
      *------------------------------------*/
 
-    abstract getCurrentPrice() : Promise<number>
+    abstract getCurrentPrice() : Promise<{}>
     abstract getName() : string
 }

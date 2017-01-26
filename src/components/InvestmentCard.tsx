@@ -14,13 +14,14 @@ export class InvestmentCard extends React.Component<any, any> {
 
 	constructor(){
 		super()
-		this.state = { currentPrice : 0, loading : true }
+		this.state = { currency : '', currentPrice : 0, loading : true }
 	}
 
 	componentDidMount(){
 		var provider = new ProviderFactory().getProvider(this.props.providerName, this.props.title)
-		provider.getCurrentPrice().then(price => {
-			this.setState({currentPrice : price, loading : false})
+		provider.getCurrentPrice().then(r => {
+			console.log(r)
+			this.setState({currentPrice : r[0], loading : false, currency : r[1]})
 		})
 	}
 
@@ -49,7 +50,7 @@ export class InvestmentCard extends React.Component<any, any> {
 						<CardTitle
 							subtitle={ change }
 							subtitleColor={ color }
-							title={ value.toFixed(2) + " " + this.props.currency}
+							title={ value.toFixed(2) + " " + this.state.currency}
 						/>
 					</Card>
 				</div>

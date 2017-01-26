@@ -25,7 +25,7 @@ export class WinkdexProvider extends JsonProvider {
 
     getCurrentPrice() {
         return this.getJSON('price').then(r => {
-            return r.price / 100.0
+            return [r.price / 100.0, 'USD']
         })
     }
 
