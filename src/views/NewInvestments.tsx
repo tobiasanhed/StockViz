@@ -13,6 +13,7 @@ import {GridList, GridTile} from 'material-ui/GridList'
 import { ProviderFactory } from '../models/providers/ProviderFactory'
 import CircularProgress from 'material-ui/CircularProgress'
 import { Link } from 'react-router'
+import { blue500, red500 } from 'material-ui/styles/colors'
 
 /*--------------------------------------
  * CLASSES
@@ -24,9 +25,9 @@ export class NewInvestments extends React.Component<any, any> {
      *------------------------------------*/
     constructor(props) {
       super(props);
-      this.state = { provider : 1, currency : 1, nameFieldValue : "Stock name", amountFieldValue : 0, priceFieldValue : 0 };
+      this.state = { provider : 1, currency : 1, nameFieldValue : "", amountFieldValue : '', priceFieldValue : ''};
     }
-    providers = ["Winkdex", "Avanza", "Yahoo", "Google Finance"]
+    providers = ["Yahoo", "Avanza", "Winkdex", "Google Finance"]
     currencies = ["USD", "SEK", "EUR", "GBP"]
 
     handleProviderChange = (event, index, value) => this.setState({provider : value});
@@ -39,37 +40,35 @@ export class NewInvestments extends React.Component<any, any> {
         return  <form>
                   <div style={{ width : '100%', padding : 30 }}>
                     <TextField id='nameFieldValue' 
+                      floatingLabelText="Name of stock (Symbol)"
                       style={{ width : '80%'}} 
                       value={this.state.nameFieldValue}
-                      errorText="This field is required"
+                      underlineFocusStyle={{borderColor : blue500 }}
+                      underlineStyle={{ borderColor : red500 }}
                       onChange={this.handleNameChange}
                       /><br />
                     <DropDownMenu style={{ width : '80%'}} 
-                      value={this.state.currency} 
-                      onChange={this.handleCurrencyChange}>
-                      <MenuItem value={1} primaryText="USD" />
-                      <MenuItem value={2} primaryText="SEK" />
-                      <MenuItem value={3} primaryText="EUR" />
-                      <MenuItem value={4} primaryText="GBP" />
-                    </DropDownMenu><br />  
-                    <DropDownMenu style={{ width : '80%'}} 
                       value={this.state.provider} 
                       onChange={this.handleProviderChange}>
-                      <MenuItem value={1} primaryText="Winkdex" />
+                      <MenuItem value={1} primaryText="Yahoo" />
                       <MenuItem value={2} primaryText="Avanza" />
-                      <MenuItem value={3} primaryText="Yahoo" />
+                      <MenuItem value={3} primaryText="Winkdex" />
                       <MenuItem value={4} primaryText="Google Finance" />
                     </DropDownMenu><br />                  
                     <TextField id='amountFieldValue' 
+                      floatingLabelText="Amount of stocks"
                       style={{ width : '80%'}} 
                       value={this.state.amountFieldValue}
-                      errorText="This field is required"
+                      underlineFocusStyle={{borderColor : blue500 }}
+                      underlineStyle={{ borderColor : red500 }}
                       onChange={this.handleAmountChange}
                       /><br />
                     <TextField id='priceFieldValue'
+                      floatingLabelText="Price when aquired"
                       style={{ width : '80%'}} 
                       value={this.state.priceFieldValue}
-                      errorText="This field is required"
+                      underlineFocusStyle={{borderColor : blue500 }}
+                      underlineStyle={{ borderColor : red500 }}
                       onChange={this.handlePriceChange}
                       /><br /><br /><br />
                     <RaisedButton onTouchTap={this.addInvestment} style={{ width : '90%'}} secondary={true} label="Add" />
@@ -84,8 +83,7 @@ export class NewInvestments extends React.Component<any, any> {
     }
 
     addInvestment = () => {
-      console.log(this.currencies[this.state.currency - 1], this.providers[this.state.provider - 1])
-      Portfolio.addInvestment(this.currencies[this.state.currency - 1], this.state.nameFieldValue, this.providers[this.state.provider - 1], this.state.amountFieldValue, this.state.priceFieldValue)
+      Portfolio.addInvestment(/*this.currencies[this.state.currency - 1],*/ this.state.nameFieldValue, this.providers[this.state.provider - 1], this.state.amountFieldValue, this.state.priceFieldValue)
       browserHistory.goBack()
     }
 }

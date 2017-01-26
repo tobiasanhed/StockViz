@@ -30,7 +30,7 @@ export class Home extends React.Component<any, any> {
         											providerName={ investment.providerName }
         											avatar={ investment.imageUrl }
         											amount={ investment.amount }
-        											currency={ investment.currency }
+        											//currency={ investment.currency }
         											initialPrice={ investment.initialPrice }
         											/>
         					))}

@@ -15,7 +15,7 @@ export class Portfolio {
 
    private static investments = [
             {
-                currency: 'USD',
+                //currency: 'USD',
                 amount: 0.7,
                 initialPrice: 600.0,
                 investmentName: 'Bitcoin',
@@ -23,7 +23,7 @@ export class Portfolio {
                 imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
             },
             {
-                currency: 'USD',
+                //currency: 'USD',
                 amount: 1.4,
                 initialPrice: 700.0,
                 investmentName: 'Bitcoin2',
@@ -31,7 +31,7 @@ export class Portfolio {
                 imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
             },
             {
-                currency: 'USD',
+                //currency: 'USD',
                 amount: 100,
                 initialPrice: 100,
                 investmentName: 'AAPL',
@@ -48,10 +48,10 @@ export class Portfolio {
         return Portfolio.investments
     }
 
-    static addInvestment(currency, name, providerName, amount, price){
+    static addInvestment(/*currency,*/ name, providerName, amount, price){
         Portfolio.investments.push(
             {
-                currency: currency,
+                //currency: currency,
                 amount: amount,
                 initialPrice: price,
                 investmentName: name,
