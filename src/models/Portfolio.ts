@@ -29,6 +29,14 @@ export class Portfolio {
                 investmentName: 'Bitcoin2',
                 providerName: 'Winkdex',
                 imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+            },
+            {
+                currency: 'USD',
+                amount: 100,
+                initialPrice: 100,
+                investmentName: 'AAPL',
+                providerName: 'Yahoo',
+                imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
             }
         ]
 

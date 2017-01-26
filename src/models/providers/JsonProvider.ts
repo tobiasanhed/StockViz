@@ -22,9 +22,9 @@ export abstract class JsonProvider {
      *------------------------------------*/
 
     constructor(baseURL) {
-        if (!baseURL.endsWith('/')) {
-            baseURL += '/'
-        }
+        //if (!baseURL.endsWith('/')) {
+        //    baseURL += '/'
+        //}
 
         this.baseURL = baseURL
     }
@@ -35,7 +35,7 @@ export abstract class JsonProvider {
 
     getJSON(method):Promise<any> {
         var url = this.baseURL + method
-
+        console.log(url)
         return new Promise((resolve) => {
             $.getJSON(url, r => resolve(r))
         })

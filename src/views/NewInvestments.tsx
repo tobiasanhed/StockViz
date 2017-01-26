@@ -24,18 +24,25 @@ export class NewInvestments extends React.Component<any, any> {
      *------------------------------------*/
     constructor(props) {
       super(props);
-      this.state = { provider : 1, currency : 1 };
+      this.state = { provider : 1, currency : 1, nameFieldValue : "Stock name", amountFieldValue : 0, priceFieldValue : 0 };
     }
+    providers = ["Winkdex", "Avanza", "Yahoo", "Google Finance"]
+    currencies = ["USD", "SEK", "EUR", "GBP"]
+
     handleProviderChange = (event, index, value) => this.setState({provider : value});
     handleCurrencyChange = (event, index, value) => this.setState({currency : value});
+    handleNameChange = (e) => {console.log(e.target.value);this.setState({nameFieldValue : e.target.value})};
+    handleAmountChange = (e) => this.setState({amountFieldValue : e.target.value});
+    handlePriceChange = (e) => this.setState({priceFieldValue : e.target.value});
 
     render() {
         return  <form>
-                  <div style={{ width : '100%', padding : 30}}>
+                  <div style={{ width : '100%', padding : 30 }}>
                     <TextField id='nameFieldValue' 
                       style={{ width : '80%'}} 
-                      hintText='Stock name'
+                      value={this.state.nameFieldValue}
                       errorText="This field is required"
+                      onChange={this.handleNameChange}
                       /><br />
                     <DropDownMenu style={{ width : '80%'}} 
                       value={this.state.currency} 
@@ -55,18 +62,20 @@ export class NewInvestments extends React.Component<any, any> {
                     </DropDownMenu><br />                  
                     <TextField id='amountFieldValue' 
                       style={{ width : '80%'}} 
-                      hintText='Amount'
+                      value={this.state.amountFieldValue}
                       errorText="This field is required"
+                      onChange={this.handleAmountChange}
                       /><br />
                     <TextField id='priceFieldValue'
                       style={{ width : '80%'}} 
-                      hintText='Price'
+                      value={this.state.priceFieldValue}
                       errorText="This field is required"
+                      onChange={this.handlePriceChange}
                       /><br /><br /><br />
-                    <RaisedButton onTouchTap={this.addInvestment} style={{ width : '90%'}} label="Add" />
+                    <RaisedButton onTouchTap={this.addInvestment} style={{ width : '90%'}} secondary={true} label="Add" />
                     <FloatingActionButton  onTouchTap={browserHistory.goBack}
-                                           backgroundColor='white'
-                                           style={{position: 'absolute', left: 20, bottom: 20}}>
+                                           style={{position: 'absolute', left: 20, bottom: 20}}
+                                           primary={true}>
                       <NavigationArrowBack />
                     </FloatingActionButton>
 
@@ -75,7 +84,8 @@ export class NewInvestments extends React.Component<any, any> {
     }
 
     addInvestment = () => {
-      console.log(this.state)
-      Portfolio.addInvestment(this.state.currency, this.state.nameFieldValue, this.state.provider, this.state.amountFieldValue, this.state.priceFieldValue)
+      console.log(this.currencies[this.state.currency - 1], this.providers[this.state.provider - 1])
+      Portfolio.addInvestment(this.currencies[this.state.currency - 1], this.state.nameFieldValue, this.providers[this.state.provider - 1], this.state.amountFieldValue, this.state.priceFieldValue)
+      browserHistory.goBack()
     }
 }

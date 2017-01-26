@@ -34,8 +34,7 @@ export class Home extends React.Component<any, any> {
         											initialPrice={ investment.initialPrice }
         											/>
         					))}
-        			<FloatingActionButton   backgroundColor='white' 
-                                            containerElement={<Link to = '/newinvestments' />} 
+        			<FloatingActionButton   containerElement={<Link to = '/newinvestments' />} 
                                             style={{position: 'absolute', bottom: 20, right: 20}}>
         				<ContentAdd />
         			</FloatingActionButton>
