@@ -28,7 +28,7 @@ export class YahooProvider extends JsonProvider {
 
     getCurrentPrice() {
         return this.getJSON('').then(r => {
-            return [Number(r.query.results.quote.Bid), r.query.results.quote.Currency]
+            return { price : r.query.results.quote.Bid, currency : r.query.results.quote.Currency }
         })
     }
 

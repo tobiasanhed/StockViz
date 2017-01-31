@@ -21,7 +21,7 @@ export class InvestmentCard extends React.Component<any, any> {
 		var provider = new ProviderFactory().getProvider(this.props.providerName, this.props.title)
 		provider.getCurrentPrice().then(r => {
 			console.log(r)
-			this.setState({currentPrice : r[0], loading : false, currency : r[1]})
+			this.setState({currentPrice : r.price, loading : false, currency : r.currency})
 		})
 	}
 
@@ -48,9 +48,20 @@ export class InvestmentCard extends React.Component<any, any> {
 							subtitle={ "Provider: " + this.props.providerName}
 						/>
 						<CardTitle
-							subtitle={ change }
-							subtitleColor={ color }
-							title={ value.toFixed(2) + " " + this.state.currency}
+							subtitle={<div style={{ marginTop : 10 }}>
+							      		  Performance:&nbsp;&nbsp; 
+							      	  	<span style={{ color : color}}>
+							      	  		{change}
+							      	  	</span>
+							      	  </div>}
+							title={ <div style={{ marginTop : -35 }}>
+						    				<div style={{ fontSize : '80%' }}>
+						    					Present value:
+						    				</div>
+						    				<div style={{ marginTop : -10 }}>
+						    					{value.toFixed(2)} {this.state.currency}
+						    				</div>
+						    			</div>}
 						/>
 					</Card>
 				</div>
