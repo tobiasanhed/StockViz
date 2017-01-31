@@ -1,9 +1,9 @@
-Portfolio App
+What is Portfolio App?
 #############
 
 Portfolio App is a program for keeping an eye on your current investments.  The program automatically updates prices and shows you the value of your investments, their change etc.
 
-.. image:: imgs/screen.png
+.. image:: images/screenshot0.png
 
 Development Roadmap
 ===================
