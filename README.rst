@@ -10,13 +10,8 @@ Development Roadmap
 
 Checkpoints
 -----------
-.. raw:: html
 
-   <s>
 - [x] View for adding new investments.
-.. raw:: html
-
-   </s>
 - [ ] More providers (e.g. Avanza etc.)
 - [ ] Saving and loading investments/portfolios.
 
