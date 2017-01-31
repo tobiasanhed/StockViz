@@ -14,6 +14,7 @@ Checkpoints
 - [x] View for adding new investments.
 - [ ] More providers (e.g. Avanza etc.)
 - [ ] Saving and loading investments/portfolios.
+- [ ] Come up with a better name. Write suggestions here: ...
 
 Ideas
 -----
