@@ -21,24 +21,24 @@ export class Home extends React.Component<any, any> {
     /*--------------------------------------
      * METHODS
      *------------------------------------*/
-     
+
     render() {
-        return <div style={{ width : '100%' }}>
-        				{Portfolio.getInvestments().map((investment) => (
-        							<InvestmentCard key={ investment.investmentName }
-        											title={ investment.investmentName }
-        											providerName={ investment.providerName }
-        											avatar={ investment.imageUrl }
-        											amount={ investment.amount }
-        											//currency={ investment.currency }
-        											initialPrice={ investment.initialPrice }
+        return <div style={{ margin: 0, width : '100%', paddingRight: 20, boxSizing: "border-box" }}>
+                        {Portfolio.getInvestments().map((investment) => (
+                                    <InvestmentCard key={ investment.investmentName }
+                                                    title={ investment.investmentName }
+                                                    providerName={ investment.providerName }
+                                                    avatar={ investment.imageUrl }
+                                                    amount={ investment.amount }
+                                                    //currency={ investment.currency }
+                                                    initialPrice={ investment.initialPrice }
                                                     targetUrl={ investment.targetUrl }
-        											/>
-        					))}
-        			<FloatingActionButton   containerElement={<Link to = '/newinvestments' />} 
+                                                    />
+                            ))}
+                    <FloatingActionButton   containerElement={<Link to = '/newinvestments' />}
                                             style={{position: 'absolute', bottom: 20, right: 20}}>
-        				<ContentAdd />
-        			</FloatingActionButton>
-        		</div>
+                        <ContentAdd />
+                    </FloatingActionButton>
+                </div>
     }
 }
