@@ -12,6 +12,10 @@ export class Portfolio {
     /*--------------------------------------
      * FIELDS
      *------------------------------------*/
+   private static images = {
+            'Yahoo' : 'https://s.yimg.com/ge/new/Finance_ICON.png',
+            'Winkdex' : 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+   }
 
    private static investments = [
             {
@@ -20,7 +24,7 @@ export class Portfolio {
                 initialPrice: 600.0,
                 investmentName: 'Bitcoin',
                 providerName: 'Winkdex',
-                imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+                imageUrl: Portfolio.images.Winkdex
             },
             {
                 //currency: 'USD',
@@ -28,7 +32,7 @@ export class Portfolio {
                 initialPrice: 700.0,
                 investmentName: 'Bitcoin2',
                 providerName: 'Winkdex',
-                imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+                imageUrl: Portfolio.images.Winkdex
             },
             {
                 //currency: 'USD',
@@ -36,7 +40,7 @@ export class Portfolio {
                 initialPrice: 100,
                 investmentName: 'AAPL',
                 providerName: 'Yahoo',
-                imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+                imageUrl: Portfolio.images.Yahoo
             }
         ]
 
@@ -56,7 +60,7 @@ export class Portfolio {
                 initialPrice: price,
                 investmentName: name,
                 providerName: providerName,
-                imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+                imageUrl: this.images[providerName]
             })
     }
 }
