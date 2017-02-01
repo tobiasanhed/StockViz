@@ -55,7 +55,7 @@ export class InvestmentCard extends React.Component<any, any> {
                             subtitle={ "Provider: " + this.props.providerName}
                         >
                         <FlatButton onClick={this.openURL}
-                                    style={{ position : 'absolute', right : 20, top : 20}}>
+                                    style={{ position : 'absolute', right : 20, top : 20}} hoverColor={'None'}>
                             <ContentOpen />
                         </FlatButton>
                         </CardHeader>
@@ -65,17 +65,17 @@ export class InvestmentCard extends React.Component<any, any> {
                                             <span style={{ color : color}}>
                                                 {change}
                                             </span>
-                                        </div>}
+                                      </div>}
                             title={ <div style={{ marginTop : -35 }}>
-                                            <div style={{ fontSize : '80%' }}>
-                                                Present value:
-                                            </div>
-                                            <div style={{ marginTop : -10 }}>
-                                                {value.toFixed(2)} {this.state.currency}
-                                            </div>
-                                        </div>}
+                                   		<div style={{ fontSize : '80%' }}>
+                                            Present value:
+                                        </div>
+                                        <div style={{ marginTop : -10 }}>
+                                            {value.toFixed(2)} {this.state.currency}
+                                        </div>
+                                    </div>}
                         />
-                                            </Card>
+                    </Card>
                 </div>
     }
 }
