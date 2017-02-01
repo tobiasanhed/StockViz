@@ -21,7 +21,7 @@ export class Home extends React.Component<any, any> {
     /*--------------------------------------
      * METHODS
      *------------------------------------*/
-
+     
     render() {
         return <div style={{ width : '100%' }}>
         				{Portfolio.getInvestments().map((investment) => (
@@ -32,6 +32,7 @@ export class Home extends React.Component<any, any> {
         											amount={ investment.amount }
         											//currency={ investment.currency }
         											initialPrice={ investment.initialPrice }
+                                                    targetUrl={ investment.targetUrl }
         											/>
         					))}
         			<FloatingActionButton   containerElement={<Link to = '/newinvestments' />} 

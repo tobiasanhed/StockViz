@@ -26,7 +26,7 @@ export class NewInvestments extends React.Component<any, any> {
      *------------------------------------*/
     constructor(props) {
       super(props);
-      this.state = { errorMessage : false, provider : 1, currency : 1, nameFieldValue : "", amountFieldValue : "", priceFieldValue : ""};
+      this.state = { errorMessage : false, provider : 1, currency : 1, nameFieldValue : "", amountFieldValue : "", priceFieldValue : "", url : ""};
     }
     providers = ["Yahoo", "Avanza", "Winkdex", "Google Finance"];
     currencies = ["USD", "SEK", "EUR", "GBP"];
@@ -95,7 +95,15 @@ export class NewInvestments extends React.Component<any, any> {
         this.handleErrorMessageOpen();
         return;
       }
-      Portfolio.addInvestment(/*this.currencies[this.state.currency - 1],*/ this.state.nameFieldValue, this.providers[this.state.provider - 1], this.state.amountFieldValue, this.state.priceFieldValue)
+
+      if(this.providers[this.state.provider - 1] === 'Winkdex'){
+        this.state.url = 'www.winkdex.com'
+      }
+      else if(this.providers[this.state.provider - 1] === 'Yahoo'){
+        this.state.url = 'finance.yahoo.com/quote/' + this.state.nameFieldValue + '/' 
+      }
+
+      Portfolio.addInvestment(/*this.currencies[this.state.currency - 1],*/ this.state.nameFieldValue, this.providers[this.state.provider - 1], this.state.amountFieldValue, this.state.priceFieldValue, this.state.url)
       browserHistory.goBack()
     }
 }

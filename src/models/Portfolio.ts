@@ -24,7 +24,8 @@ export class Portfolio {
                 initialPrice: 600.0,
                 investmentName: 'Bitcoin',
                 providerName: 'Winkdex',
-                imageUrl: Portfolio.images.Winkdex
+                imageUrl: Portfolio.images.Winkdex,
+                targetUrl: 'https://www.winkdex.com'
             },
             {
                 //currency: 'USD',
@@ -32,7 +33,8 @@ export class Portfolio {
                 initialPrice: 700.0,
                 investmentName: 'Bitcoin2',
                 providerName: 'Winkdex',
-                imageUrl: Portfolio.images.Winkdex
+                imageUrl: Portfolio.images.Winkdex,
+                targetUrl: 'https://www.winkdex.com'
             },
             {
                 //currency: 'USD',
@@ -40,7 +42,8 @@ export class Portfolio {
                 initialPrice: 100,
                 investmentName: 'AAPL',
                 providerName: 'Yahoo',
-                imageUrl: Portfolio.images.Yahoo
+                imageUrl: Portfolio.images.Yahoo,
+                targetUrl: 'https://finance.yahoo.com/quote/AAPL/'
             }
         ]
 
@@ -52,7 +55,7 @@ export class Portfolio {
         return Portfolio.investments
     }
 
-    static addInvestment(/*currency,*/ name, providerName, amount, price){
+    static addInvestment(/*currency,*/ name, providerName, amount, price, targetUrl){
         Portfolio.investments.push(
             {
                 //currency: currency,
@@ -60,7 +63,8 @@ export class Portfolio {
                 initialPrice: price,
                 investmentName: name,
                 providerName: providerName,
-                imageUrl: this.images[providerName]
+                imageUrl: this.images[providerName],
+                targetUrl: targetUrl
             })
     }
 }

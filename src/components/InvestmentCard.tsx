@@ -9,6 +9,8 @@ import {GridList, GridTile} from 'material-ui/GridList'
 import { ProviderFactory } from '../models/providers/ProviderFactory'
 import CircularProgress from 'material-ui/CircularProgress'
 import { Link } from 'react-router'
+import ContentOpen from 'material-ui/svg-icons/action/open-in-new'
+import electron = require('electron')
 
 export class InvestmentCard extends React.Component<any, any> {
 
@@ -25,11 +27,16 @@ export class InvestmentCard extends React.Component<any, any> {
 		})
 	}
 
+	openURL = (e) => {
+        //console.log(this.props.targetUrl)
+        electron.shell.openExternal(this.props.targetUrl)
+     }
+
 	render(){
 		if(this.state.loading){
 			return  <div style={{ height : 160, paddingLeft: 20, paddingRight: 20, paddingTop: 20 }}>
 						<Card style={{ width : '100%', height : '100%' }}>
-							<div style={{ postition : 'relative' }}>
+							<div style={{ position : 'relative' }}>
 								<CircularProgress size={ 60 } style={{ marginLeft : '50%', left : -30, top : 50 }} />
 							</div>
 						</Card>
@@ -40,13 +47,18 @@ export class InvestmentCard extends React.Component<any, any> {
 		var color = (r < 0.0) ? '#d00' : '#0d0'
 		var value = this.props.amount * this.state.currentPrice
 
-		return <div style={{ height : 160, paddingLeft: 20, paddingRight: 20, paddingTop: 20 }}>
-					<Card style={{ float : 'left', width : '100%', height : '100%'}}>
+		return <div style={{ height : 160, paddingTop: 20, paddingRight : 20, paddingLeft : 20}}>
+					<Card style={{  width : '100%', height : '100%'}}>
 						<CardHeader
 							avatar={ this.props.avatar }
 							title={ this.props.title }
 							subtitle={ "Provider: " + this.props.providerName}
-						/>
+						>
+						<FlatButton onClick={this.openURL} 
+									style={{ position : 'absolute', right : 20, top : 20}}>
+        					<ContentOpen />
+        				</FlatButton>
+    					</CardHeader>
 						<CardTitle
 							subtitle={<div style={{ marginTop : 10 }}>
 							      		  Performance:&nbsp;&nbsp; 
@@ -63,7 +75,7 @@ export class InvestmentCard extends React.Component<any, any> {
 						    				</div>
 						    			</div>}
 						/>
-					</Card>
+											</Card>
 				</div>
 	}
 }
