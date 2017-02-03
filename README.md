@@ -1,4 +1,5 @@
 # What is PORTFOLIO?
+
 PORTFOLIO is an [Electron](http://electron.atom.io/) application built with [Node.js](https://nodejs.org/en/) and [React](https://facebook.github.io/react/). It helps you keep track of your investments by visualizing the Present Value of your portfolio and assets. PORTFOLIO always keeps you up to date by downloading the latest financial market data from various *providers*.
 <img alt="" src="images/screenshot1.png" />
 
@@ -20,9 +21,10 @@ npm start
 
 ## Built with
 - [Electron](http://electron.atom.io/) - Build cross platform desktop apps with JavaScript, HTML, and CSS
-- [Node.js](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
+- [Node.js](https://nodejs.org/en/) - A JavaScript runtime built on Chrome's V8 JavaScript engine
 - [React](https://facebook.github.io/react/) - A JavaScript library for building user interfaces
-- [TypeScript](https://www.typescriptlang.org/) - TypeScript is a free and open-source programming language developed and maintained by Microsoft
+- [TypeScript](https://www.typescriptlang.org/) - A free and open-source programming language developed and maintained by Microsoft
+
 ## Contributors
 
 [Philip Arvidsson](https://github.com/philiparvidsson)
