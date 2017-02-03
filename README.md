@@ -27,8 +27,8 @@ npm start
 
 ## Contributors
 
-* [Philip Arvidsson](https://github.com/philiparvidsson)
-* [Tobias Ånhed](https://github.com/tobiasanhed)
+* [Philip Arvidsson](https://github.com/philiparvidsson) - *Vision and architecture.*
+* [Tobias Ånhed](https://github.com/tobiasanhed) - *Implementation and visual design.*
 
 ## About the project
 
