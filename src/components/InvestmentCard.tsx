@@ -98,7 +98,7 @@ export class InvestmentCard extends React.Component<any, any> {
                                                     modal={false}
                                                     open={this.state.removeConfirm}
                                                     onRequestClose={this.removeHandleClose}>
-                                                                   Delete?
+                                                                   Are you sure you want to remove your {this.props.title} investment?
                                 </Dialog>
                             </IconButton>
                         </div>
