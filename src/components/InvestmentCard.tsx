@@ -1,7 +1,7 @@
 
 import * as React from 'react'
 
-import { CardTitle, Card, CardActions, CardHeader, CardText, FlatButton, FloatingActionButton } from 'material-ui'
+import { IconButton, CardTitle, Card, CardActions, CardHeader, CardText, FlatButton, FloatingActionButton } from 'material-ui'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
 import { Portfolio } from '../models/Portfolio'
@@ -54,10 +54,8 @@ export class InvestmentCard extends React.Component<any, any> {
                             title={ this.props.title }
                             subtitle={ "Provider: " + this.props.providerName}
                         >
-                        <FlatButton onClick={this.openURL}
-                                    style={{ position : 'absolute', right : 20, top : 20}} hoverColor={'None'}>
-                            <ContentOpen />
-                        </FlatButton>
+                        <IconButton  onClick={this.openURL}
+                                     style={{ position : 'absolute', right : 4, top : 4}} hoverColor={'None'} ><ContentOpen  /></IconButton>
                         </CardHeader>
                         <CardTitle
                             subtitle={<div style={{ marginTop : 10 }}>
