@@ -33,24 +33,24 @@ export class NewInvestments extends React.Component<any, any> {
 
     handleProviderChange = (event, index, value) => this.setState({provider : value});
     handleCurrencyChange = (event, index, value) => this.setState({currency : value});
-    handleNameChange = (e) => {console.log(e.target.value);this.setState({nameFieldValue : e.target.value})};
+    handleNameChange = (e) => {this.setState({nameFieldValue : e.target.value})};
     handleAmountChange = (e) => this.setState({amountFieldValue : e.target.value});
     handlePriceChange = (e) => this.setState({priceFieldValue : e.target.value});
     handleErrorMessageOpen = () => this.setState({ errorMessage : true });
     handleErrorMessageRequestClose = () => this.setState({ errorMessage : false });
 
     render() {
-        return  <form>
-                  <div style={{ width : '100%', padding : 30 }}>
+        return  <form>                    
+                    <div style={{ width : '100%', padding : 20, boxSizing: "border-box" }}>
                     <TextField id='nameFieldValue' 
                       floatingLabelText="Name of stock (Symbol)"
-                      style={{ width : '80%'}} 
+                      style={{ width : '100%'}} 
                       value={this.state.nameFieldValue}
                       underlineFocusStyle={{borderColor : blue500 }}
                       underlineStyle={{ borderColor : red500 }}
                       onChange={this.handleNameChange}
                       /><br/>
-                    <DropDownMenu style={{ width : '80%'}} 
+                    <DropDownMenu style={{ width : '100%'}} 
                       value={this.state.provider} 
                       onChange={this.handleProviderChange}>
                       <MenuItem value={1} primaryText="Yahoo" />
@@ -60,7 +60,7 @@ export class NewInvestments extends React.Component<any, any> {
                     </DropDownMenu><br/>                  
                     <TextField id='amountFieldValue' 
                       floatingLabelText="Amount of stocks"
-                      style={{ width : '80%'}} 
+                      style={{ width : '100%'}} 
                       value={this.state.amountFieldValue}
                       underlineFocusStyle={{borderColor : blue500 }}
                       underlineStyle={{ borderColor : red500 }}
@@ -68,13 +68,14 @@ export class NewInvestments extends React.Component<any, any> {
                       /><br/>
                     <TextField id='priceFieldValue'
                       floatingLabelText="Price when aquired"
-                      style={{ width : '80%'}} 
+                      style={{ width : '100%'}} 
                       value={this.state.priceFieldValue}
                       underlineFocusStyle={{borderColor : blue500 }}
                       underlineStyle={{ borderColor : red500 }}
                       onChange={this.handlePriceChange}
                       /><br/><br/><br/>
-                    <RaisedButton onTouchTap={this.addInvestment} style={{ width : '90%'}} secondary={true} label="Add" />
+                      <RaisedButton onTouchTap={this.addInvestment} style={{ width : '100%' }} secondary={true} label="Add" />
+                    </div>
                     <FloatingActionButton  onTouchTap={browserHistory.goBack}
                                            style={{position: 'absolute', left: 20, bottom: 20}}
                                            >
@@ -86,7 +87,6 @@ export class NewInvestments extends React.Component<any, any> {
                       autoHideDuration={4000}
                       onRequestClose={this.handleErrorMessageRequestClose}
                     />
-                  </div>
                 </form>
     }
 

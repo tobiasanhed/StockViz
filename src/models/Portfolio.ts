@@ -3,12 +3,15 @@
  *------------------------------------*/
 
 import { ProviderFactory } from './providers/ProviderFactory.ts'
+import storage = require('electron-storage')
 
 /*--------------------------------------
  * CLASSES
  *------------------------------------*/
 
 export class Portfolio {
+    private static FILEPATH = 'Investments'
+
     /*--------------------------------------
      * FIELDS
      *------------------------------------*/
@@ -20,30 +23,39 @@ export class Portfolio {
    private static investments = [
             {
                 //currency: 'USD',
-                amount: 0.7,
-                initialPrice: 600.0,
-                investmentName: 'Bitcoin',
-                providerName: 'Winkdex',
-                imageUrl: Portfolio.images.Winkdex,
-                targetUrl: 'https://www.winkdex.com'
-            },
-            {
-                //currency: 'USD',
-                amount: 1.4,
-                initialPrice: 700.0,
-                investmentName: 'Bitcoin2',
-                providerName: 'Winkdex',
-                imageUrl: Portfolio.images.Winkdex,
-                targetUrl: 'https://www.winkdex.com'
-            },
-            {
-                //currency: 'USD',
-                amount: 100,
-                initialPrice: 100,
-                investmentName: 'AAPL',
+                amount: 5,
+                initialPrice: 342.90,
+                investmentName: 'HM-B.ST',
                 providerName: 'Yahoo',
                 imageUrl: Portfolio.images.Yahoo,
-                targetUrl: 'https://finance.yahoo.com/quote/AAPL/'
+                targetUrl: 'https://finance.yahoo.com/quote/HM-B.ST/'
+            },
+            {
+                //currency: 'USD',
+                amount: 5,
+                initialPrice: 76.55,
+                investmentName: 'IMINT.ST',
+                providerName: 'Yahoo',
+                imageUrl: Portfolio.images.Yahoo,
+                targetUrl: 'https://finance.yahoo.com/quote/IMINT.ST/'
+            },
+            {
+                //currency: 'USD',
+                amount: 40,
+                initialPrice: 25.02,
+                investmentName: 'MYFC.ST',
+                providerName: 'Yahoo',
+                imageUrl: Portfolio.images.Yahoo,
+                targetUrl: 'https://finance.yahoo.com/quote/MYFC.ST/'
+            },
+            {
+                //currency: 'USD',
+                amount: 63,
+                initialPrice: 17.56,
+                investmentName: 'NVP.ST',
+                providerName: 'Yahoo',
+                imageUrl: Portfolio.images.Yahoo,
+                targetUrl: 'https://finance.yahoo.com/quote/NVP.ST/'
             }
         ]
 
@@ -51,8 +63,35 @@ export class Portfolio {
      * METHODS
      *------------------------------------*/
 
+    static loadInvestments(){
+        storage.get(this.FILEPATH).then( (investments) => {
+            Portfolio.investments = investments
+            return investments
+        })
+    }
+    
+    static saveInvestments(){
+        return storage.set(this.FILEPATH, Portfolio.investments)
+    }
+
     static getInvestments() {
-        return Portfolio.investments
+         return storage.get(this.FILEPATH).then( (investments) => {
+            Portfolio.investments = investments
+            return investments
+        })
+    }
+
+    static removeInvestments(investmentName) {
+        console.log("removeing " + investmentName)
+        for(var i = 0; i < Portfolio.investments.length; i++){
+            if(Portfolio.investments[i].investmentName === investmentName)
+                break
+        }
+        console.log(Portfolio.investments)
+        Portfolio.investments.splice(i, 1)
+        console.log(Portfolio.investments)
+
+        return this.saveInvestments()
     }
 
     static addInvestment(/*currency,*/ name, providerName, amount, price, targetUrl){
@@ -66,5 +105,6 @@ export class Portfolio {
                 imageUrl: this.images[providerName],
                 targetUrl: targetUrl
             })
+        this.saveInvestments()
     }
 }

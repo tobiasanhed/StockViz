@@ -1,7 +1,7 @@
 
 import * as React from 'react'
 
-import { CardTitle, Card, CardActions, CardHeader, CardText, FlatButton, FloatingActionButton } from 'material-ui'
+import { Dialog, CardTitle, Card, CardActions, CardHeader, CardText, IconButton, FlatButton, FloatingActionButton } from 'material-ui'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import ContentEdit from 'material-ui/svg-icons/editor/mode-edit'
 import { Portfolio } from '../models/Portfolio'
@@ -10,13 +10,14 @@ import { ProviderFactory } from '../models/providers/ProviderFactory'
 import CircularProgress from 'material-ui/CircularProgress'
 import { Link } from 'react-router'
 import ContentOpen from 'material-ui/svg-icons/action/open-in-new'
+import ContentDelete from 'material-ui/svg-icons/action/delete'
 import electron = require('electron')
 
 export class InvestmentCard extends React.Component<any, any> {
 
     constructor(){
         super()
-        this.state = { currency : '', currentPrice : 0, loading : true }
+        this.state = { currency : '', currentPrice : 0, loading : true, removeConfirm : false }
     }
 
     componentDidMount(){
@@ -31,7 +32,20 @@ export class InvestmentCard extends React.Component<any, any> {
         //console.log(this.props.targetUrl)
         electron.shell.openExternal(this.props.targetUrl)
      }
+     removeHandleOpen = () => {
+        this.setState({removeConfirm: true});
+      }
 
+      removeHandleClose = () => {
+        this.setState({removeConfirm: false});
+      }
+      removeInvestments = () => {
+
+        Portfolio.removeInvestments(this.props.title).then( () => {
+            this.setState({removeConfirm: false});
+            this.props.onRemove()
+        })
+      }
     render(){
         if(this.state.loading){
             return  <div style={{ height : 180, paddingTop: 20, width: "100%", maxWidth: 420, float: "left", paddingLeft: 20, boxSizing: "border-box" }}>
@@ -54,10 +68,10 @@ export class InvestmentCard extends React.Component<any, any> {
                             title={ this.props.title }
                             subtitle={ "Provider: " + this.props.providerName}
                         >
-                        <FlatButton onClick={this.openURL}
-                                    style={{ position : 'absolute', right : 20, top : 20}} hoverColor={'None'}>
+                        <IconButton onClick={this.openURL}
+                                    style={{ position : 'absolute', right : 4, top : 4}}>
                             <ContentOpen />
-                        </FlatButton>
+                        </IconButton>
                         </CardHeader>
                         <CardTitle
                             subtitle={<div style={{ marginTop : 10 }}>
@@ -65,7 +79,30 @@ export class InvestmentCard extends React.Component<any, any> {
                                             <span style={{ color : color}}>
                                                 {change}
                                             </span>
-                                      </div>}
+                                      
+                                          <IconButton onClick={this.removeHandleOpen}
+                                            style={{ position : 'absolute', bottom : 4,  right : 4 }}>
+                                            <ContentDelete />
+                                            <Dialog actions={[
+                                                        <FlatButton
+                                                            label="Cancel"
+                                                            primary={true}
+                                                            onTouchTap={this.removeHandleClose}
+                                                          />,
+                                                          <FlatButton
+                                                            label="Remove"
+                                                            primary={true}
+                                                            onTouchTap={this.removeInvestments}
+                                                          />
+                                                    ]}
+                                                    modal={false}
+                                                    open={this.state.removeConfirm}
+                                                    onRequestClose={this.removeHandleClose}>
+                                                    Delete?
+                                            </Dialog>
+                                          </IconButton>
+                                      </div>
+                                  }
                             title={ <div style={{ marginTop : -35 }}>
                                    		<div style={{ fontSize : '80%' }}>
                                             Present value:
