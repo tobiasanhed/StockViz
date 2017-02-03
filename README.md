@@ -21,6 +21,7 @@ npm start
 
 ## Built with
 - [Electron](http://electron.atom.io/) - Build cross platform desktop apps with JavaScript, HTML, and CSS
+- [Material-UI](http://www.material-ui.com/) - A set of React Components that Implement Google's Material Design
 - [Node.js](https://nodejs.org/en/) - A JavaScript runtime built on Chrome's V8 JavaScript engine
 - [React](https://facebook.github.io/react/) - A JavaScript library for building user interfaces
 - [TypeScript](https://www.typescriptlang.org/) - A free and open-source programming language developed and maintained by Microsoft
