@@ -20,6 +20,7 @@
   "dependencies": {
     "copy-webpack-plugin": "^4.0.1",
     "electron": "^1.4.14",
+    "electron-storage": "^1.0.7",
     "es6-promise": "^4.0.5",
     "jquery": "^3.1.1",
     "material-ui": "^0.16.6",
