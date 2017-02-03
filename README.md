@@ -1,6 +1,6 @@
 # What is PORTFOLIO?
 PORTFOLIO is an [Electron](http://electron.atom.io/) application built with [Node.js](https://nodejs.org/en/) and [React](https://facebook.github.io/react/). It helps you keep track of your investments by visualizing the Present Value of your portfolio and assets. PORTFOLIO always keeps you up to date by downloading the latest financial market data from various *providers*.
-<img alt=”” src=”images/screenshot1.png” />
+<img alt="" src="images/screenshot1.png" />
 
 ## Building and running
 
@@ -28,4 +28,3 @@ Enter the following commands in your terminal to build and run the application:
 ## About the project
 
 During the time of writing our [bachelor’s thesis](https://github.com/philiparvidsson/Sequence-to-Sequence-Learning-of-Financial-Time-Series), we delved deeper into various financial markets. We decided we might as well start trading while waiting for our predictive models to complete their calculations (taking *hours* at a time—literally). To keep track of our investments easily, we developed PORTFOLIO.
-
