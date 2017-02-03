@@ -10,11 +10,14 @@ PORTFOLIO is an [Electron](http://electron.atom.io/) application built with [Nod
 
 Enter the following commands in your terminal to build and run the application:
 
-    git clone https://github.com/tobiasanhed/portfolioapp.git
-    cd portfolioapp
-    npm install
-    npm run develop &
-    npm start
+```bash
+git clone https://github.com/tobiasanhed/portfolioapp.git
+cd portfolioapp
+npm install
+npm run develop &
+npm start
+```
+
 ## Built with
 - [Electron](http://electron.atom.io/) - Build cross platform desktop apps with JavaScript, HTML, and CSS
 - [Node.js](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
