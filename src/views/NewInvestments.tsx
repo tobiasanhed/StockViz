@@ -97,10 +97,10 @@ export class NewInvestments extends React.Component<any, any> {
         }
 
         if(this.providers[this.state.provider - 1] === 'Winkdex'){
-            this.state.url = 'www.winkdex.com'
+            this.state.url = 'https://www.winkdex.com'
         }
         else if(this.providers[this.state.provider - 1] === 'Yahoo'){
-            this.state.url = 'finance.yahoo.com/quote/' + this.state.nameFieldValue + '/'
+            this.state.url = 'https://finance.yahoo.com/quote/' + this.state.nameFieldValue + '/'
         }
 
         Portfolio.addInvestment(/*this.currencies[this.state.currency - 1],*/ this.state.nameFieldValue, this.providers[this.state.provider - 1], this.state.amountFieldValue, this.state.priceFieldValue, this.state.url)

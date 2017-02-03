@@ -20,44 +20,7 @@ export class Portfolio {
         'Winkdex' : 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
     }
 
-    private static investments = [
-        /* {
-            //currency: 'USD',
-            amount: 5,
-            initialPrice: 342.90,
-            investmentName: 'HM-B.ST',
-            providerName: 'Yahoo',
-            imageUrl: Portfolio.images.Yahoo,
-            targetUrl: 'https://finance.yahoo.com/quote/HM-B.ST/'
-        },
-        {
-            //currency: 'USD',
-            amount: 5,
-            initialPrice: 76.55,
-            investmentName: 'IMINT.ST',
-            providerName: 'Yahoo',
-            imageUrl: Portfolio.images.Yahoo,
-            targetUrl: 'https://finance.yahoo.com/quote/IMINT.ST/'
-        },
-        {
-            //currency: 'USD',
-            amount: 40,
-            initialPrice: 25.02,
-            investmentName: 'MYFC.ST',
-            providerName: 'Yahoo',
-            imageUrl: Portfolio.images.Yahoo,
-            targetUrl: 'https://finance.yahoo.com/quote/MYFC.ST/'
-        },
-        {
-            //currency: 'USD',
-            amount: 63,
-            initialPrice: 17.56,
-            investmentName: 'NVP.ST',
-            providerName: 'Yahoo',
-            imageUrl: Portfolio.images.Yahoo,
-            targetUrl: 'https://finance.yahoo.com/quote/NVP.ST/'
-        }*/
-    ]
+    private static investments = []
 
     /*--------------------------------------
      * METHODS
@@ -74,10 +37,14 @@ export class Portfolio {
         return storage.set(this.FILEPATH, Portfolio.investments)
     }
 
-    static getInvestments() {
+    static getInvestments(){
         return storage.get(this.FILEPATH).then( (investments) => {
             Portfolio.investments = investments
             return investments
+        })
+        .catch(err => {
+            Portfolio.saveInvestments()
+            return Portfolio.investments
         })
     }
 

@@ -29,7 +29,6 @@ export class InvestmentCard extends React.Component<any, any> {
     }
 
     openURL = (e) => {
-        //console.log(this.props.targetUrl)
         electron.shell.openExternal(this.props.targetUrl)
     }
     removeHandleOpen = () => {
