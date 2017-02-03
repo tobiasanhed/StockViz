@@ -3,7 +3,9 @@
 PORTFOLIO is an [Electron](http://electron.atom.io/) application built with [Node.js](https://nodejs.org/en/) and [React](https://facebook.github.io/react/). It helps you keep track of your investments by visualizing the Present Value of your portfolio and assets. PORTFOLIO always keeps you up to date by downloading the latest financial market data from various *providers*.
 <img alt="" src="images/screenshot1.png" />
 
-### -> [Download now!](https://github.com/tobiasanhed/portfolioapp/releases/) <-
+## Acquiring PORTFOLIO
+
+Click [here](releases) to download the latest release of PORTFOLIO.
 
 ## Building and running
 
