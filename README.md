@@ -5,7 +5,7 @@ PORTFOLIO is an [Electron](http://electron.atom.io/) application built with [Nod
 
 ## Acquiring PORTFOLIO
 
-Click [here](releases) to download the latest release of PORTFOLIO.
+Click [here](https://github.com/tobiasanhed/portfolioapp/releases) to download the latest release of PORTFOLIO.
 
 ## Building and running
 
