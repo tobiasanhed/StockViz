@@ -4,7 +4,7 @@ StockViz is an investment management application.  It helps you keep track of yo
 ![Screenshot](images/screenshot1.png)
 
 ## Acquiring StockViz
-Click [here](https://github.com/tobiasanhed/portfolioapp/releases) to download the latest release of StockViz.
+Click [here](https://github.com/tobiasanhed/StockViz/releases) to download the latest release of StockViz.
 
 ## Building and running
 **Prerequisites**
@@ -14,8 +14,8 @@ Click [here](https://github.com/tobiasanhed/portfolioapp/releases) to download t
 Enter the following commands in your terminal to build and run the application:
 
 ```bash
-git clone https://github.com/tobiasanhed/portfolioapp.git
-cd portfolioapp
+git clone https://github.com/tobiasanhed/StockViz.git
+cd StockViz
 npm install
 npm run develop &
 npm start
