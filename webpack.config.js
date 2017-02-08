@@ -26,7 +26,9 @@ module.exports = {
 
     plugins: [
         new CopyWebpackPlugin([
-            { from: './node_modules/jquery/dist/jquery.min.js' }
+            { from: './node_modules/jquery/dist/jquery.min.js' },
+            { from: './src/assets/yahoo.png', to: "assets/yahoo.png" },
+            { from: './src/assets/bitcoin.png', to: "assets/bitcoin.png" }
         ]),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.IgnorePlugin(/vertx/)

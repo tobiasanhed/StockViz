@@ -16,8 +16,8 @@ export class Portfolio {
      * FIELDS
      *------------------------------------*/
     private static images = {
-        'Yahoo' : 'https://s.yimg.com/ge/new/Finance_ICON.png',
-        'Winkdex' : 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2000px-Bitcoin.svg.png'
+        'Yahoo' : 'assets/yahoo.png',
+        'Winkdex' : 'assets/bitcoin.png'
     }
 
     private static investments = []
