@@ -4,7 +4,7 @@
   "description": "Keep up with your portfolio!",
   "main": "./src/main.js",
   "scripts": {
-    "package": "electron-packager . StockViz --all --icon 'src/assets/icon.icns'",
+    "package": "npm run build && electron-packager . StockViz --all --icon 'src/assets/icon.icns'",
     "build": "webpack",
     "develop": "webpack-dev-server",
     "start": "electron ."
