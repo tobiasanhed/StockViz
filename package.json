@@ -34,5 +34,8 @@
     "typings": "^2.1.0",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
+    "electron-packager": "^8.5.1"
   }
 }
