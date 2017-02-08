@@ -26,7 +26,7 @@ export class NewInvestments extends React.Component<any, any> {
      *------------------------------------*/
     constructor(props) {
         super(props);
-        this.state = { errorMessage : false, provider : 1, currency : 1, nameFieldValue : "", amountFieldValue : "", priceFieldValue : "", url : ""};
+        this.state = { errorMessage : false, provider : 0, currency : 1, nameFieldValue : "", amountFieldValue : "", priceFieldValue : "", url : ""};
     }
     providers = ["Yahoo", "Avanza", "Winkdex", "Google Finance"];
     currencies = ["USD", "SEK", "EUR", "GBP"];
@@ -43,7 +43,7 @@ export class NewInvestments extends React.Component<any, any> {
         return  <form>
     <div style={{ width : '100%', padding : 20, boxSizing: "border-box" }}>
         <TextField id='nameFieldValue'
-                   floatingLabelText="Name of stock (Symbol)"
+                   floatingLabelText="Investment name (Stock symbol)"
                    style={{ width : '100%'}}
                    value={this.state.nameFieldValue}
                    underlineFocusStyle={{borderColor : blue500 }}
@@ -53,13 +53,14 @@ export class NewInvestments extends React.Component<any, any> {
         <DropDownMenu style={{ width : '100%'}}
                       value={this.state.provider}
                       onChange={this.handleProviderChange}>
+            <MenuItem value={0} primaryText="Select provider" />
             <MenuItem value={1} primaryText="Yahoo" />
             <MenuItem value={2} primaryText="Avanza" />
             <MenuItem value={3} primaryText="Winkdex" />
             <MenuItem value={4} primaryText="Google Finance" />
         </DropDownMenu><br/>
         <TextField id='amountFieldValue'
-                   floatingLabelText="Amount of stocks"
+                   floatingLabelText="Quantity"
                    style={{ width : '100%'}}
                    value={this.state.amountFieldValue}
                    underlineFocusStyle={{borderColor : blue500 }}
@@ -67,7 +68,7 @@ export class NewInvestments extends React.Component<any, any> {
                    onChange={this.handleAmountChange}
         /><br/>
         <TextField id='priceFieldValue'
-                   floatingLabelText="Price when aquired"
+                   floatingLabelText="Purchase price per unit"
                    style={{ width : '100%'}}
                    value={this.state.priceFieldValue}
                    underlineFocusStyle={{borderColor : blue500 }}
