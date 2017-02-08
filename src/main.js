@@ -14,10 +14,15 @@ function createWindow() {
         }
     })
 
-    win.loadURL('http://localhost:8080/')
+    if (process.env.HOT) {
+        win.loadURL('http://localhost:8080/')
+    }
+    else {
+        win.loadURL(`file://${__dirname}/index.html`)
+    }
 
     win.setMenu(null)
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     win.on('closed', () => {
         win = null
