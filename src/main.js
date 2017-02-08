@@ -8,7 +8,7 @@ function createWindow() {
     win = new BrowserWindow({
         width: 440,
         height: 800,
-        icon: 'assets/icon.png'
+        icon: __dirname + '/assets/icon.png',
         webPreferences: {
             webSecurity: false
         }

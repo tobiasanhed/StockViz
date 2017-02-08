@@ -1,5 +1,5 @@
 {
-  "name": "portfolioapp",
+  "name": "StockViz",
   "version": "0.1.0",
   "description": "Keep up with your portfolio!",
   "main": "./src/main.js",
