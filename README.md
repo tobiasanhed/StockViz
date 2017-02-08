@@ -16,9 +16,8 @@ Enter the following commands in your terminal to build and run the application:
 ```bash
 git clone https://github.com/tobiasanhed/StockViz.git
 cd StockViz
-npm install
-npm run develop &
-npm start
+npm install && ./node_modules/.bin/typings install
+npm run build && npm run start
 ```
 
 ## Built with
