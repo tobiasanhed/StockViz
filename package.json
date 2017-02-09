@@ -7,7 +7,7 @@
     "package": "npm run build && electron-packager . StockViz --all --icon 'src/assets/icon.icns'",
     "build": "webpack",
     "develop": "webpack-dev-server",
-    "start": "electron ."
+    "start": "export HOT=true && electron ."
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 # What is StockViz?
 StockViz is an investment management application.  It helps you keep track of your investments by visualizing the present value of your portfolio and assets.  StockViz always keeps you up to date by downloading the latest financial market data from various *providers*.  The goal is to provide the most fundamental tools for keeping track of your investments without cluttering the interface with complex analysis tools etc.
 
-![Screenshot](images/screenshot1.png)
+![Screenshot](images/screenshot2.png)
 
 ## Acquiring StockViz
 Click [here](https://github.com/tobiasanhed/StockViz/releases) to download the latest release of StockViz.
