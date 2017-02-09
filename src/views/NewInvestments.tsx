@@ -28,7 +28,7 @@ export class NewInvestments extends React.Component<any, any> {
         super(props);
         this.state = { errorMessage : false, provider : 0, currency : 1, nameFieldValue : "", amountFieldValue : "", priceFieldValue : "", url : ""};
     }
-    providers = ["Yahoo", "Avanza", "Winkdex", "Google Finance"];
+    providers = ["Yahoo", "Winkdex"];
     currencies = ["USD", "SEK", "EUR", "GBP"];
 
     handleProviderChange = (event, index, value) => this.setState({provider : value});
@@ -55,9 +55,7 @@ export class NewInvestments extends React.Component<any, any> {
                       onChange={this.handleProviderChange}>
             <MenuItem value={0} primaryText="Select provider" />
             <MenuItem value={1} primaryText="Yahoo" />
-            <MenuItem value={2} primaryText="Avanza" />
-            <MenuItem value={3} primaryText="Winkdex" />
-            <MenuItem value={4} primaryText="Google Finance" />
+            <MenuItem value={2} primaryText="Winkdex" />
         </DropDownMenu><br/>
         <TextField id='amountFieldValue'
                    floatingLabelText="Quantity"
