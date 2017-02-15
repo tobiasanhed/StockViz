@@ -16,11 +16,9 @@ export class YahooProvider extends JsonProvider {
      *------------------------------------*/
 
     constructor(investmentName){
-        super("http://query.yahooapis.com/v1/public/yql?q=select%20%2a%20from%20yahoo.finance.quotes%20where%20symbol%20in%20%28%22"
-         	  + investmentName + 
-         	  "%22%29%0A%09%09&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json")
+        super("http://query.yahooapis.com/v1/public/yql?q=select%20%2a%20from%20yahoo.finance.quotes%20where%20symbol%20in%20%28%22" + investmentName + "%22%29%0A%09%09&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json")
     }
-    
+
 
     /*--------------------------------------
      * METHODS
